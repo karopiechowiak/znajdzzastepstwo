@@ -7,7 +7,7 @@ const Navigation = () => {
   return (
     <nav className="container">
       <div>
-        <Link to="/" className="title">
+        <Link to="/" className="title" style={{ color: "white" }}>
           Znajdź Zastępstwo
         </Link>
         <nav>

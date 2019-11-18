@@ -5,12 +5,18 @@ const LoggedOutMenu = () => {
   return (
     <ul className="buttons is-right">
       <li>
-        <NavLink to="/" className="button is-rounded is-light">
+        <NavLink
+          to="/"
+          className="button is-link is-inverted is-outlined is-rounded"
+        >
           Załóż konto
         </NavLink>
       </li>
       <li>
-        <NavLink to="/" className="button is-rounded is-light">
+        <NavLink
+          to="/"
+          className="button is-link is-inverted is-outlined is-rounded"
+        >
           Zaloguj się
         </NavLink>
       </li>

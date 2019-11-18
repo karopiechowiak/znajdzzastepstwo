@@ -11,7 +11,7 @@
 }
 
 .bg {
-  background: linear-gradient(133deg, #f32b94, #0025f0);
+  background: linear-gradient(133deg, #984ef2, #051779);
   background-size: 400% 400%;
   height: 100vh;
   animation-name: bgAnimation;
