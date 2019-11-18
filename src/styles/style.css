@@ -1,55 +1,20 @@
+@keyframes bgAnimation {
+  0% {
+    background-position: 2% 0%;
+  }
+  50% {
+    background-position: 99% 100%;
+  }
+  100% {
+    background-position: 2% 0%;
+  }
+}
+
 .bg {
   background: linear-gradient(133deg, #f32b94, #0025f0);
   background-size: 400% 400%;
   height: 100vh;
-
-  /* -webkit-animation: bgAnimation 27s ease infinite;
-  -moz-animation: bgAnimation 27s ease infinite;
-  -o-animation: bgAnimation 27s ease infinite; */
-  @keyframes bgAnimation {
-    0% {
-      background-position: 2% 0%;
-    }
-    50% {
-      background-position: 99% 100%;
-    }
-    100% {
-      background-position: 2% 0%;
-    }
-  }
-
-  /* @-webkit-keyframes bgAnimation {
-    0% {
-      background-position: 2% 0%;
-    }
-    50% {
-      background-position: 99% 100%;
-    }
-    100% {
-      background-position: 2% 0%;
-    }
-  }
-  @-moz-keyframes bgAnimation {
-    0% {
-      background-position: 2% 0%;
-    }
-    50% {
-      background-position: 99% 100%;
-    }
-    100% {
-      background-position: 2% 0%;
-    }
-  }
-  @-o-keyframes bgAnimation {
-    0% {
-      background-position: 2% 0%;
-    }
-    50% {
-      background-position: 99% 100%;
-    }
-    100% {
-      background-position: 2% 0%;
-    }
-  } */
-  animation: bgAnimation infinite 3s ease;
+  animation-name: bgAnimation;
+  animation-duration: 27s;
+  animation-iteration-count: infinite;
 }
