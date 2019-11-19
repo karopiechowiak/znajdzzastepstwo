@@ -11,10 +11,10 @@
 }
 
 .bg {
-  background: linear-gradient(133deg, #984ef2, #051779);
+  background: linear-gradient(133deg, #21d4fd, #b721ff);
   background-size: 400% 400%;
   height: 100vh;
   animation-name: bgAnimation;
-  animation-duration: 27s;
+  animation-duration: 60s;
   animation-iteration-count: infinite;
 }
