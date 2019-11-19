@@ -1,6 +1,6 @@
 const path = require("path");
 const entryPath = "src";
-const entryFile = "App.js";
+const entryFile = "index.js";
 
 module.exports = {
   entry: `./${entryPath}/js/${entryFile}`,

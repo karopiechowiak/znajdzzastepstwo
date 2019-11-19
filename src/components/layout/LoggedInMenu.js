@@ -6,7 +6,7 @@ const LoggedInMenu = () => {
     <ul className="buttons is-right">
       <li>
         <NavLink
-          to="/"
+          to="/newnotice"
           className="button is-link is-inverted is-outlined is-rounded"
         >
           Nowe ogłoszenie
