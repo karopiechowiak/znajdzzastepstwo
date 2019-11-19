@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Notice from "./Notice.js";
+import Notice from "./../notices/Notice";
 
 class Noticeboard extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container" style={{ width: "60%" }}>
         <Notice />
         <Notice />
       </div>

@@ -44,7 +44,7 @@ class SignUp extends Component {
           <input type="text" id="organisation" onChange={this.handleChange} />
           <label htmlFor="lawyerId">Numer legitymacji</label>
           <input type="lawyerId" id="lawyerId" onChange={this.handleChange} />
-          <button>Zaloguj się</button>
+          <button>Zarejestruj się</button>
         </form>
       </div>
     );
