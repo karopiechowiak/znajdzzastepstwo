@@ -1,5 +1,5 @@
 import authReducer from "./authReducer";
-import noticeReducer from "./noticesReducer";
+import noticeReducer from "./noticeReducer";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
