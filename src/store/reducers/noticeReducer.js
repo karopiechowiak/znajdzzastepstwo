@@ -34,6 +34,10 @@ const initState = {
 };
 
 const noticeReducer = (state = initState, action) => {
+  switch (action.type) {
+    case "ADD_NEW_NOTICE":
+      console.log("nowe ogłoszenie", action.notice);
+  }
   return state;
 };
 

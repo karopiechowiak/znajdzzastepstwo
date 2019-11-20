@@ -14,7 +14,7 @@ class Notice extends Component {
         <p>Data: {date}</p>
         <p>Godzina: {hour}</p>
         <p>Opis: {description}</p>
-        <p>Dane kontaktowe:{contact}</p>
+        <p>Dane kontaktowe: {contact}</p>
       </div>
     );
   }

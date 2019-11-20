@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { addNewNotice } from "./../../store/actions/noticeActions";
 
 class NewNotice extends Component {
   state = {
@@ -19,7 +21,7 @@ class NewNotice extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.addNewNotice(this.state);
   };
 
   render() {
@@ -57,4 +59,9 @@ class NewNotice extends Component {
   }
 }
 
-export default NewNotice;
+const mapDispatchToProps = dispatch => {
+  return {
+    addNewNotice: notice => dispatch(addNewNotice(notice))
+  };
+};
+export default connect(null, mapDispatchToProps)(NewNotice);
