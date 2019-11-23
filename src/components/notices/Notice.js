@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Notice extends Component {
   render() {
     const { city, court, type, date, hour, description, contact } = this.props;
-
+    console.log(this.props.city);
     return (
       <div className="box">
         <p>Miasto: {city}</p>

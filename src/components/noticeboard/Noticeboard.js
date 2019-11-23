@@ -4,12 +4,12 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import firebase from "firebase/app";
-import "firebase/auth";
+// import "firebase/auth";
 
 class Noticeboard extends Component {
   render() {
     const { notices } = this.props;
-    console.log(...notices);
+    console.log(notices);
     return (
       <div className="container" style={{ width: "60%" }}>
         {notices.map(notice => (
