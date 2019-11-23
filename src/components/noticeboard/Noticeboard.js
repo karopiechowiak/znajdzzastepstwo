@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import Notice from "./../notices/Notice";
 import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 class Noticeboard extends Component {
   render() {
-    console.log(this.props.notices);
     const { notices } = this.props;
+    console.log(...notices);
     return (
       <div className="container" style={{ width: "60%" }}>
         {notices.map(notice => (
@@ -26,9 +30,13 @@ class Noticeboard extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    notices: state.notice.notices
+    notices: state.firestore.ordered.notices || state.notice.notices
   };
 };
 
-export default connect(mapStateToProps)(Noticeboard);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "notices" }])
+)(Noticeboard);

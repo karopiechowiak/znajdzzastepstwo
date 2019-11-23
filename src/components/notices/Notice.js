@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 class Notice extends Component {
   render() {
-    console.log(this.props);
-
     const { city, court, type, date, hour, description, contact } = this.props;
 
     return (
