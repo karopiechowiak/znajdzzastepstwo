@@ -23,6 +23,7 @@ class NewNotice extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.addNewNotice(this.state);
+    this.props.history.push("/");
   };
 
   render() {

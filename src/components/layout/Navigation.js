@@ -5,8 +5,12 @@ import LoggedOutMenu from "./LoggedOutMenu";
 import { connect } from "react-redux";
 
 const Navigation = props => {
-  const { auth } = props;
-  const menuLinks = auth.uid ? <LoggedInMenu /> : <LoggedOutMenu />;
+  const { auth, profile } = props;
+  const menuLinks = auth.uid ? (
+    <LoggedInMenu profile={profile} />
+  ) : (
+    <LoggedOutMenu />
+  );
   return (
     <nav className="container">
       <div>
@@ -20,8 +24,10 @@ const Navigation = props => {
 };
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
   };
 };
 

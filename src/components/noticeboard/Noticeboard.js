@@ -7,7 +7,8 @@ import { Redirect } from "react-router-dom";
 
 class Noticeboard extends Component {
   render() {
-    const { notices, auth } = this.props;
+    const { notices, auth, profile } = this.props;
+
     if (!auth.uid) return <Redirect to="/login" />;
     return (
       <div className="container" style={{ width: "60%" }}>
@@ -21,6 +22,8 @@ class Noticeboard extends Component {
             hour={notice.hour}
             description={notice.description}
             contact={notice.contact}
+            authorFirstName={notice.authorFirstName}
+            authorLastName={notice.authorLastName}
           />
         ))}
       </div>
