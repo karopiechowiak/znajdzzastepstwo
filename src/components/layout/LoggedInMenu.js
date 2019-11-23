@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { logOut } from "./../../store/actions/authActions";
 
-const LoggedInMenu = () => {
+const LoggedInMenu = props => {
   return (
     <ul className="buttons is-right">
       <li>
@@ -13,12 +15,12 @@ const LoggedInMenu = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink
-          to="/"
+        <a
           className="button is-link is-inverted is-outlined is-rounded"
+          onClick={props.logOut}
         >
-          Wyloguj
-        </NavLink>
+          Wyloguj się
+        </a>
       </li>
       <li>
         <NavLink
@@ -32,4 +34,10 @@ const LoggedInMenu = () => {
   );
 };
 
-export default LoggedInMenu;
+const mapDispatchToProps = dispatch => {
+  return {
+    logOut: () => dispatch(logOut())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(LoggedInMenu);

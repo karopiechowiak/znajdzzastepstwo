@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import { addNewNotice } from "./../../store/actions/noticeActions";
 
 class NewNotice extends Component {
@@ -25,6 +26,9 @@ class NewNotice extends Component {
   };
 
   render() {
+    const { auth } = this.props;
+    if (!auth.uid) return <Redirect to="/login" />;
+
     return (
       <div>
         <form
@@ -59,9 +63,15 @@ class NewNotice extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     addNewNotice: notice => dispatch(addNewNotice(notice))
   };
 };
-export default connect(null, mapDispatchToProps)(NewNotice);
+export default connect(mapStateToProps, mapDispatchToProps)(NewNotice);

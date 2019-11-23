@@ -3,13 +3,12 @@ import Notice from "./../notices/Notice";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-import firebase from "firebase/app";
-// import "firebase/auth";
+import { Redirect } from "react-router-dom";
 
 class Noticeboard extends Component {
   render() {
-    const { notices } = this.props;
-    console.log(notices);
+    const { notices, auth } = this.props;
+    if (!auth.uid) return <Redirect to="/login" />;
     return (
       <div className="container" style={{ width: "60%" }}>
         {notices.map(notice => (
@@ -30,9 +29,9 @@ class Noticeboard extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
-    notices: state.firestore.ordered.notices || state.notice.notices
+    notices: state.firestore.ordered.notices || state.notice.notices,
+    auth: state.firebase.auth
   };
 };
 
