@@ -15,6 +15,7 @@ class Noticeboard extends Component {
         {notices.map(notice => (
           <Notice
             key={notice.id}
+            id={notice.id}
             city={notice.city}
             court={notice.court}
             type={notice.type}

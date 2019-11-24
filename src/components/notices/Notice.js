@@ -1,7 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
+import { deleteNotice } from "./../../store/actions/noticeActions";
 
 const Notice = props => {
   const {
+    id,
     city,
     court,
     type,
@@ -13,8 +16,14 @@ const Notice = props => {
     authorLastName
   } = props;
   console.log(props);
+
+  const handleDelete = e => {
+    console.log("usuwanie", e.target.parentElement.id);
+    props.deleteNotice(e);
+  };
+
   return (
-    <div className="box">
+    <div className="box" id={id}>
       <p>Miasto: {city}</p>
       <p>Sąd: {court}</p>
       <p>Rodzaj sprawy: {type}</p>
@@ -25,9 +34,15 @@ const Notice = props => {
       <p>
         Utworzone przez: {authorFirstName} {authorLastName}
       </p>
-      <p></p>
+      <button onClick={handleDelete}>Usuń</button>
     </div>
   );
 };
 
-export default Notice;
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteNotice: e => dispatch(deleteNotice(e))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Notice);
