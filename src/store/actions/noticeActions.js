@@ -33,6 +33,15 @@ export const deleteNotice = e => {
     const deleteId = e.target.parentElement.id;
     db.collection("notices")
       .doc(deleteId)
-      .delete();
+      .delete()
+      .then(() => {
+        dispatch({
+          type: "DELETE_NOTICE",
+          deleteId
+        });
+      })
+      .catch(err => {
+        dispatch({ type: "DELETE_NOTICE_ERROR", err });
+      });
   };
 };

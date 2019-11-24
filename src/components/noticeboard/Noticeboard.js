@@ -25,6 +25,8 @@ class Noticeboard extends Component {
             contact={notice.contact}
             authorFirstName={notice.authorFirstName}
             authorLastName={notice.authorLastName}
+            authorId={notice.authorId}
+            currentUserId={auth.uid}
           />
         ))}
       </div>

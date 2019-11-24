@@ -13,7 +13,9 @@ const Notice = props => {
     description,
     contact,
     authorFirstName,
-    authorLastName
+    authorLastName,
+    authorId,
+    currentUserId
   } = props;
   console.log(props);
 
@@ -34,7 +36,9 @@ const Notice = props => {
       <p>
         Utworzone przez: {authorFirstName} {authorLastName}
       </p>
-      <button onClick={handleDelete}>Usuń</button>
+      {authorId === currentUserId ? (
+        <button onClick={handleDelete}>Usuń</button>
+      ) : null}
     </div>
   );
 };
