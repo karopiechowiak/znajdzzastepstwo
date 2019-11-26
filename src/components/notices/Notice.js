@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteNotice } from "./../../store/actions/noticeActions";
+import { deleteNotice, editNotice } from "./../../store/actions/noticeActions";
+import EditNotice from "./../notices/EditNotice";
 
 const Notice = props => {
   const {
@@ -24,6 +25,11 @@ const Notice = props => {
     props.deleteNotice(e);
   };
 
+  const handleEdit = e => {
+    console.log("edytowanie");
+    props.editNotice(e);
+  };
+
   return (
     <div className="box" id={id}>
       <p>Miasto: {city}</p>
@@ -37,15 +43,28 @@ const Notice = props => {
         Utworzone przez: {authorFirstName} {authorLastName}
       </p>
       {authorId === currentUserId ? (
+        <button onClick={handleEdit}>Edytuj</button>
+      ) : null}
+      {authorId === currentUserId ? (
         <button onClick={handleDelete}>Usuń</button>
       ) : null}
+      <EditNotice
+        city={city}
+        court={court}
+        type={type}
+        date={date}
+        hour={hour}
+        description={description}
+        contact={contact}
+      />
     </div>
   );
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteNotice: e => dispatch(deleteNotice(e))
+    deleteNotice: e => dispatch(deleteNotice(e)),
+    editNotice: e => dispatch(editNotice(e))
   };
 };
 

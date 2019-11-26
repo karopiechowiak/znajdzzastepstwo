@@ -45,3 +45,18 @@ export const deleteNotice = e => {
       });
   };
 };
+
+export const editNotice = (notice, id) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    console.log("action edytowanie", notice, id);
+    db.collection("notices")
+      .doc(id)
+      .update({ ...notice })
+      .then(() => {
+        dispatch({ type: "EDIT_NOTICE", notice });
+      })
+      .catch(error => {
+        dispatch({ type: "EDIT_NOTICE_ERROR", error });
+      });
+  };
+};
