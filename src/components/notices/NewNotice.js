@@ -46,8 +46,8 @@ class NewNotice extends Component {
           <input type="text" id="type" onChange={this.handleChange} />
           <label htmlFor="date">Data</label>
           <input type="date" id="date" onChange={this.handleChange} />
-          <label htmlFor="time">Godzina</label>
-          <input type="time" id="time" onChange={this.handleChange} />
+          <label htmlFor="hour">Godzina</label>
+          <input type="time" id="hour" onChange={this.handleChange} />
           <label htmlFor="description">Opis:</label>
           <textarea
             type="text"

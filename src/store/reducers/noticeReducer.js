@@ -19,13 +19,17 @@ const noticeReducer = (state = initState, action) => {
       console.log("nowe ogłoszenie", action.notice);
       return state;
     case "ADD_NEW_NOTICE_ERROR":
-      console.log("błąd", action.error);
+      console.log("błąd dodawania ogłoszenia", action.error);
       return state;
     case "DELETE_NOTICE":
       console.log("usunięto ogłoszenie o id", action.deleteId);
       return state;
     case "DELETE_NOTICE_ERROR":
-      console.log("błąd usuwania ogłoszenia", action.err);
+      console.log("błąd usuwania ogłoszenia", action.error);
+    case "EDIT_NOTICE":
+      console.log("edytowano ogłoszenie", action.notice);
+    case "EDIT_NOTICE_ERROR":
+      console.log("błąd edytowania ogłoszenia", action.error);
     default:
       return state;
   }

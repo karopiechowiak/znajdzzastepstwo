@@ -26,44 +26,61 @@ class EditNotice extends Component {
   };
 
   render() {
-    console.log(this.props);
+    const { city, court, type, date, hour, description, contact } = this.state;
     return (
       <div>
-        <form
-          className="box container"
-          style={{ width: "60%" }}
-          onSubmit={this.handleSubmit}
-        >
-          <h2>Nowe ogłoszenie</h2>
+        <form style={{ width: "80%" }} onSubmit={this.handleSubmit}>
+          <h2>Edytuj ogłoszenie</h2>
           <label htmlFor="city">Miasto</label>
           <input
             type="text"
             id="city"
             onChange={this.handleChange}
-            value={this.state.city}
+            value={city}
           />
           <label htmlFor="court">Sąd</label>
           <input
             type="text"
             id="court"
             onChange={this.handleChange}
-            value={this.state.court}
+            value={court}
           />
           <label htmlFor="type">Rodzaj sprawy</label>
-          <input type="text" id="type" onChange={this.handleChange} />
+          <input
+            type="text"
+            id="type"
+            onChange={this.handleChange}
+            value={type}
+          />
           <label htmlFor="date">Data</label>
-          <input type="date" id="date" onChange={this.handleChange} />
-          <label htmlFor="time">Godzina</label>
-          <input type="time" id="time" onChange={this.handleChange} />
+          <input
+            type="date"
+            id="date"
+            onChange={this.handleChange}
+            value={date}
+          />
+          <label htmlFor="hour">Godzina</label>
+          <input
+            type="time"
+            id="hour"
+            onChange={this.handleChange}
+            value={hour}
+          />
           <label htmlFor="description">Opis:</label>
           <textarea
             type="text"
             id="description"
             style={{ resize: "none" }}
             onChange={this.handleChange}
+            value={description}
           />
           <label htmlFor="contact">Dane kontaktowe</label>
-          <input type="text" id="contact" onChange={this.handleChange} />
+          <input
+            type="text"
+            id="contact"
+            onChange={this.handleChange}
+            value={contact}
+          />
           <button>Edytuj ogłoszenie</button>
         </form>
       </div>

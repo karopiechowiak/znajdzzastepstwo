@@ -40,8 +40,8 @@ export const deleteNotice = e => {
           deleteId
         });
       })
-      .catch(err => {
-        dispatch({ type: "DELETE_NOTICE_ERROR", err });
+      .catch(error => {
+        dispatch({ type: "DELETE_NOTICE_ERROR", error });
       });
   };
 };
