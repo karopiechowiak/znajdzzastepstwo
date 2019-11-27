@@ -1,6 +1,6 @@
-# Znajdź Zastepstwo
+# Znajdź Zastępstwo
 
-If a counselor cannot attend a court hearing, he still has to represent his client during the proceedigns. This is where substitute lawyers come in handy - they may attend a hearing in place of the main counselor. Znajdz Zastepstwo is a website for finding substitute lawyers all over Poland.
+If a counselor cannot attend a court hearing, he still has to represent his client during the proceedigns. This is where substitute lawyers come in handy - they may attend a hearing in place of the main counselor. Znajdź Zastępstwo is a website for finding substitute lawyers all over Poland.
 
 It's a final project for a CodersLab Front-End: React Bootcamp.
 
