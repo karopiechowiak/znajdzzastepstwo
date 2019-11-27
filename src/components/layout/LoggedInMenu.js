@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import { logOut } from "./../../store/actions/authActions";
 
 const LoggedInMenu = props => {
-  console.log(props);
-
   return (
     <ul className="buttons is-right">
       <li>

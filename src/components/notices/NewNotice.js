@@ -11,7 +11,8 @@ class NewNotice extends Component {
     date: "",
     hour: "",
     description: "",
-    contact: ""
+    contact: "",
+    editMenuActive: false
   };
 
   handleChange = e => {

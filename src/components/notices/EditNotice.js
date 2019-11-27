@@ -20,9 +20,9 @@ class EditNotice extends Component {
   };
 
   handleSubmit = e => {
+    console.log("edit");
     e.preventDefault();
     this.props.editNotice(this.state, e.target.parentElement.parentElement.id);
-    //  this.props.history.push("/");
   };
 
   render() {

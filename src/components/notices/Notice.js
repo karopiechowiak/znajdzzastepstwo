@@ -1,70 +1,82 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteNotice, editNotice } from "./../../store/actions/noticeActions";
 import EditNotice from "./../notices/EditNotice";
 
-const Notice = props => {
-  const {
-    id,
-    city,
-    court,
-    type,
-    date,
-    hour,
-    description,
-    contact,
-    authorFirstName,
-    authorLastName,
-    authorId,
-    currentUserId
-  } = props;
-  console.log(props);
-
-  const handleDelete = e => {
-    console.log("usuwanie", e.target.parentElement.id);
-    props.deleteNotice(e);
+class Notice extends Component {
+  state = {
+    editMenuActive: false
   };
 
-  const handleEdit = e => {
-    console.log("edytowanie");
-    props.editNotice(e);
+  handleDelete = e => {
+    this.props.deleteNotice(e);
   };
 
-  return (
-    <div className="box" id={id}>
-      <p>Miasto: {city}</p>
-      <p>Sąd: {court}</p>
-      <p>Rodzaj sprawy: {type}</p>
-      <p>Data: {date}</p>
-      <p>Godzina: {hour}</p>
-      <p>Opis: {description}</p>
-      <p>Dane kontaktowe: {contact}</p>
-      <p>
-        Utworzone przez: {authorFirstName} {authorLastName}
-      </p>
-      {authorId === currentUserId ? (
-        <button onClick={handleEdit}>Edytuj</button>
-      ) : null}
-      {authorId === currentUserId ? (
-        <button onClick={handleDelete}>Usuń</button>
-      ) : null}
-      <EditNotice
-        city={city}
-        court={court}
-        type={type}
-        date={date}
-        hour={hour}
-        description={description}
-        contact={contact}
-      />
-    </div>
-  );
-};
+  toggleEdit = () => {
+    this.setState({ editMenuActive: !this.state.editMenuActive });
+  };
+
+  handleEdit = e => {
+    this.setState({ editMenuActive: !this.state.editMenuActive });
+    console.log(this.state.editMenuActive);
+  };
+
+  render() {
+    const {
+      id,
+      city,
+      court,
+      type,
+      date,
+      hour,
+      description,
+      contact,
+      authorFirstName,
+      authorLastName,
+      authorId,
+      currentUserId
+    } = this.props;
+
+    return (
+      <div className="box" id={id}>
+        <p>Miasto: {city}</p>
+        <p>Sąd: {court}</p>
+        <p>Rodzaj sprawy: {type}</p>
+        <p>Data: {date}</p>
+        <p>Godzina: {hour}</p>
+        <p>Opis: {description}</p>
+        <p>Dane kontaktowe: {contact}</p>
+        <p>
+          Utworzone przez: {authorFirstName} {authorLastName}
+        </p>
+        {authorId === currentUserId ? (
+          <button onClick={this.toggleEdit}>
+            {this.state.editMenuActive ? "Anuluj" : "Edytuj"}
+          </button>
+        ) : null}
+        {authorId === currentUserId ? (
+          <button onClick={this.handleDelete}>Usuń</button>
+        ) : null}
+        {this.state.editMenuActive && (
+          <EditNotice
+            city={city}
+            court={court}
+            type={type}
+            date={date}
+            hour={hour}
+            description={description}
+            contact={contact}
+            handleEdit={() => this.handleEdit()}
+          />
+        )}
+      </div>
+    );
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteNotice: e => dispatch(deleteNotice(e)),
-    editNotice: e => dispatch(editNotice(e))
+    deleteNotice: e => dispatch(deleteNotice(e))
   };
 };
 

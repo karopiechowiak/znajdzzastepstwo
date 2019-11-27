@@ -6,14 +6,14 @@ export const addNewNotice = notice => {
     const profile = getState().firebase.profile;
     const authorId = getState().firebase.auth.uid;
 
-    firestore
-      .collection("notices")
+    db.collection("notices")
       .add({
         ...notice,
         authorFirstName: profile.firstName,
         authorLastName: profile.lastName,
         authorId: authorId,
-        createdAt: new Date()
+        createdAt: new Date(),
+        editNoticeActive: false
       })
       .then(() => {
         dispatch({

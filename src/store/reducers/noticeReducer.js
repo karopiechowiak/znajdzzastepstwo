@@ -26,10 +26,13 @@ const noticeReducer = (state = initState, action) => {
       return state;
     case "DELETE_NOTICE_ERROR":
       console.log("błąd usuwania ogłoszenia", action.error);
+      return state;
     case "EDIT_NOTICE":
       console.log("edytowano ogłoszenie", action.notice);
+      return state;
     case "EDIT_NOTICE_ERROR":
       console.log("błąd edytowania ogłoszenia", action.error);
+      return state;
     default:
       return state;
   }
