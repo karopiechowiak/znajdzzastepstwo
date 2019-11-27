@@ -49,14 +49,6 @@ class Notice extends Component {
         <p>
           Utworzone przez: {authorFirstName} {authorLastName}
         </p>
-        {authorId === currentUserId ? (
-          <button onClick={this.toggleEdit}>
-            {this.state.editMenuActive ? "Anuluj" : "Edytuj"}
-          </button>
-        ) : null}
-        {authorId === currentUserId ? (
-          <button onClick={this.handleDelete}>Usuń</button>
-        ) : null}
         {this.state.editMenuActive && (
           <EditNotice
             city={city}
@@ -66,9 +58,18 @@ class Notice extends Component {
             hour={hour}
             description={description}
             contact={contact}
-            handleEdit={() => this.handleEdit()}
+            handleEdit={this.handleEdit}
           />
         )}
+
+        {authorId === currentUserId ? (
+          <button onClick={this.toggleEdit}>
+            {this.state.editMenuActive ? "Anuluj" : "Edytuj"}
+          </button>
+        ) : null}
+        {authorId === currentUserId ? (
+          <button onClick={this.handleDelete}>Usuń</button>
+        ) : null}
       </div>
     );
   }
