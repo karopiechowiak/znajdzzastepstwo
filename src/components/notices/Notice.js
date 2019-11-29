@@ -39,16 +39,20 @@ class Notice extends Component {
 
     return (
       <div className="box" id={id}>
-        <p>Miasto: {city}</p>
-        <p>Sąd: {court}</p>
-        <p>Rodzaj sprawy: {type}</p>
-        <p>Data: {date}</p>
-        <p>Godzina: {hour}</p>
-        <p>Opis: {description}</p>
-        <p>Dane kontaktowe: {contact}</p>
-        <p>
-          Utworzone przez: {authorFirstName} {authorLastName}
-        </p>
+        {!this.state.editMenuActive && (
+          <div>
+            <p>Miasto: {city}</p>
+            <p>Sąd: {court}</p>
+            <p>Rodzaj sprawy: {type}</p>
+            <p>Data: {date}</p>
+            <p>Godzina: {hour}</p>
+            <p>Opis: {description}</p>
+            <p>Dane kontaktowe: {contact}</p>
+            <p>
+              Utworzone przez: {authorFirstName} {authorLastName}
+            </p>
+          </div>
+        )}
         {this.state.editMenuActive && (
           <EditNotice
             city={city}
