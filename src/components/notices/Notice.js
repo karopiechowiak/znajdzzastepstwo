@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteNotice, editNotice } from "./../../store/actions/noticeActions";
 import EditNotice from "./../notices/EditNotice";
+import NoticeData from "./../notices/NoticeData";
 
 class Notice extends Component {
   state = {
@@ -40,19 +41,21 @@ class Notice extends Component {
     return (
       <div className="box" id={id}>
         {!this.state.editMenuActive && (
-          <div>
-            <p>Miasto: {city}</p>
-            <p>Sąd: {court}</p>
-            <p>Rodzaj sprawy: {type}</p>
-            <p>Data: {date}</p>
-            <p>Godzina: {hour}</p>
-            <p>Opis: {description}</p>
-            <p>Dane kontaktowe: {contact}</p>
-            <p>
-              Utworzone przez: {authorFirstName} {authorLastName}
-            </p>
-          </div>
+          <NoticeData
+            city={city}
+            court={court}
+            type={type}
+            date={date}
+            hour={hour}
+            description={description}
+            contact={contact}
+            authorFirstName={authorFirstName}
+            authorLastName={authorLastName}
+          />
         )}
+        {/* {!this.state.editMenuActive && (
+          
+        )} */}
         {this.state.editMenuActive && (
           <EditNotice
             city={city}
