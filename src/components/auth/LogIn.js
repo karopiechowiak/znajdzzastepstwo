@@ -27,12 +27,26 @@ class LogIn extends Component {
     return (
       <div className="box container" style={{ width: "60%" }}>
         <form onSubmit={this.handleSubmit}>
-          <h2>Zaloguj się</h2>
-          <label htmlFor="email">Adres e-mail</label>
-          <input type="email" id="email" onChange={this.handleChange} />
-          <label htmlFor="password">Hasło</label>
-          <input type="password" id="password" onChange={this.handleChange} />
-          <button>Zaloguj się</button>
+          <h2 className="title is-5">Zaloguj się</h2>
+          <label htmlFor="email" className="label">
+            Adres e-mail
+          </label>
+          <input
+            type="email"
+            id="email"
+            onChange={this.handleChange}
+            className="input"
+          />
+          <label htmlFor="password" className="label">
+            Hasło
+          </label>
+          <input
+            type="password"
+            id="password"
+            onChange={this.handleChange}
+            className="input"
+          />
+          <button className="button is-rounded is-info">Zaloguj się</button>
         </form>
         <div>{authError ? <p>{authError}</p> : null}</div>
       </div>

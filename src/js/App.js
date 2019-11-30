@@ -5,12 +5,14 @@ import Noticeboard from "./../components/noticeboard/Noticeboard.js";
 import LogIn from "./../components/auth/LogIn";
 import SignUp from "./../components/auth/SignUp";
 import NewNotice from "./../components/notices/NewNotice";
+import Aside from "./../components/layout/Aside";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="bg">
+          <Aside />
           <Navigation />
           <Switch>
             <Route exact path="/" component={Noticeboard} />

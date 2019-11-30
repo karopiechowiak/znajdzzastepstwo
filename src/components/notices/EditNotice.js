@@ -30,59 +30,81 @@ class EditNotice extends Component {
     const { city, court, type, date, hour, description, contact } = this.state;
     return (
       <div>
-        <form style={{ width: "80%" }} onSubmit={this.handleSubmit}>
-          <h2>Edytuj ogłoszenie</h2>
-          <label htmlFor="city">Miasto</label>
+        <form onSubmit={this.handleSubmit}>
+          <h2 className="title is-6">Edytuj ogłoszenie</h2>
+          <label htmlFor="city" className="label is-small">
+            Miasto
+          </label>
           <input
             type="text"
             id="city"
             onChange={this.handleChange}
             value={city}
+            className="input is-small"
           />
-          <label htmlFor="court">Sąd</label>
+          <label htmlFor="court" className="label is-small">
+            Sąd
+          </label>
           <input
             type="text"
             id="court"
             onChange={this.handleChange}
             value={court}
+            className="input is-small"
           />
-          <label htmlFor="type">Rodzaj sprawy</label>
+          <label htmlFor="type" className="label is-small">
+            Rodzaj sprawy
+          </label>
           <input
             type="text"
             id="type"
             onChange={this.handleChange}
             value={type}
+            className="input is-small"
           />
-          <label htmlFor="date">Data</label>
+          <label htmlFor="date" className="label is-small">
+            Data
+          </label>
           <input
             type="date"
             id="date"
             onChange={this.handleChange}
             value={date}
+            className="input is-small"
           />
-          <label htmlFor="hour">Godzina</label>
+          <label htmlFor="hour" className="label is-small">
+            Godzina
+          </label>
           <input
             type="time"
             id="hour"
             onChange={this.handleChange}
             value={hour}
+            className="input is-small"
           />
-          <label htmlFor="description">Opis:</label>
+          <label htmlFor="description" className="label is-small">
+            Opis:
+          </label>
           <textarea
             type="text"
             id="description"
             style={{ resize: "none" }}
             onChange={this.handleChange}
             value={description}
+            className="textarea is-small"
+            rows="2"
           />
-          <label htmlFor="contact">Dane kontaktowe</label>
+          <label htmlFor="contact" className="label is-small">
+            Dane kontaktowe
+          </label>
           <input
             type="text"
             id="contact"
             onChange={this.handleChange}
             value={contact}
+            className="input is-small"
           />
-          <button className="button is-link is-rounded is-small">
+          <button className="button is-info is-rounded is-small">
             Edytuj ogłoszenie
           </button>
         </form>

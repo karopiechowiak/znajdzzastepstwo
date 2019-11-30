@@ -69,7 +69,7 @@ class Notice extends Component {
         {authorId === currentUserId ? (
           <button
             onClick={this.toggleEdit}
-            className="button is-small is-link is-rounded"
+            className="button is-small is-info is-rounded"
           >
             {this.state.editMenuActive ? "Anuluj" : "Edytuj"}
           </button>

@@ -34,31 +34,79 @@ class NewNotice extends Component {
     return (
       <div>
         <form
-          className="box container"
-          style={{ width: "60%" }}
+          className="box container field"
+          style={{ width: "40%", padding: "50px" }}
           onSubmit={this.handleSubmit}
         >
-          <h2>Nowe ogłoszenie</h2>
-          <label htmlFor="city">Miasto</label>
-          <input type="text" id="city" onChange={this.handleChange} />
-          <label htmlFor="court">Sąd</label>
-          <input type="text" id="court" onChange={this.handleChange} />
-          <label htmlFor="type">Rodzaj sprawy</label>
-          <input type="text" id="type" onChange={this.handleChange} />
-          <label htmlFor="date">Data</label>
-          <input type="date" id="date" onChange={this.handleChange} />
-          <label htmlFor="hour">Godzina</label>
-          <input type="time" id="hour" onChange={this.handleChange} />
-          <label htmlFor="description">Opis:</label>
+          <h2 className="title is-5">Nowe ogłoszenie</h2>
+          <label htmlFor="city" className="label">
+            Miasto
+          </label>
+          <input
+            type="text"
+            id="city"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="court" className="label">
+            Sąd
+          </label>
+          <input
+            type="text"
+            id="court"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="type" className="label">
+            Rodzaj sprawy
+          </label>
+          <input
+            type="text"
+            id="type"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="date" className="label">
+            Data
+          </label>
+          <input
+            type="date"
+            id="date"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="hour" className="label">
+            Godzina
+          </label>
+          <input
+            type="time"
+            id="hour"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="description" className="label">
+            Opis
+          </label>
           <textarea
             type="text"
             id="description"
             style={{ resize: "none" }}
             onChange={this.handleChange}
+            className="textarea is-small"
+            rows="2"
           />
-          <label htmlFor="contact">Dane kontaktowe</label>
-          <input type="text" id="contact" onChange={this.handleChange} />
-          <button>Dodaj ogłoszenie</button>
+          <label htmlFor="contact" className="label">
+            Dane kontaktowe
+          </label>
+          <input
+            type="text"
+            id="contact"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <button className="button is-link is-rounded is-small">
+            Dodaj ogłoszenie
+          </button>
         </form>
       </div>
     );

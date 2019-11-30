@@ -13,11 +13,22 @@ const Navigation = props => {
   );
   return (
     <nav className="container">
-      <div style={{ height: "20vh", display: "flex", alignItems: "center" }}>
-        <Link to="/" className="title container" style={{ color: "white" }}>
+      <div
+        style={{
+          height: "25vh",
+          display: "flex",
+          alignItems: "center",
+          width: "80%",
+          margin: "0 auto"
+        }}
+      >
+        <Link
+          to="/"
+          className="title container"
+          style={{ color: "white", fontSize: "40px" }}
+        >
           Znajdź <i className="fas fa-balance-scale"></i>
-          <br />
-          Zastępstwo
+          <br /> <span style={{ fontSize: "33px" }}>Zastępstwo </span> <br />
         </Link>
         <nav>{menuLinks}</nav>
       </div>

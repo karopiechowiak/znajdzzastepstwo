@@ -33,22 +33,64 @@ class SignUp extends Component {
     return (
       <div className="box container" style={{ width: "60%" }}>
         <form onSubmit={this.handleSubmit}>
-          <h2>Zarejestruj się</h2>
-          <label htmlFor="email">Adres e-mail</label>
-          <input type="email" id="email" onChange={this.handleChange} />
-          <label htmlFor="password">Hasło</label>
-          <input type="password" id="password" onChange={this.handleChange} />
-          <label htmlFor="firstName">Imię</label>
-          <input type="text" id="firstName" onChange={this.handleChange} />
-          <label htmlFor="lastName">Nazwisko</label>
-          <input type="text" id="lastName" onChange={this.handleChange} />
-          <label htmlFor="organisation">
+          <h2 className="title is-5">Zarejestruj się</h2>
+          <label htmlFor="email" className="label">
+            Adres e-mail
+          </label>
+          <input
+            type="email"
+            id="email"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="password" className="label">
+            Hasło
+          </label>
+          <input
+            type="password"
+            id="password"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="firstName" className="label">
+            Imię
+          </label>
+          <input
+            type="text"
+            id="firstName"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="lastName" className="label">
+            Nazwisko
+          </label>
+          <input
+            type="text"
+            id="lastName"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="organisation" className="label">
             Siedziba Okręgowej Izby Radcowskiej/Rady Adwokackiej
           </label>
-          <input type="text" id="organisation" onChange={this.handleChange} />
-          <label htmlFor="lawyerId">Numer legitymacji</label>
-          <input type="lawyerId" id="lawyerId" onChange={this.handleChange} />
-          <button>Zarejestruj się</button>
+          <input
+            type="text"
+            id="organisation"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <label htmlFor="lawyerId" className="label">
+            Numer legitymacji
+          </label>
+          <input
+            type="lawyerId"
+            id="lawyerId"
+            onChange={this.handleChange}
+            className="input is-small"
+          />
+          <button className="button is-rounded is-info is-small">
+            Zarejestruj się
+          </button>
         </form>
         {authError ? <p>{authError}</p> : null}
       </div>
