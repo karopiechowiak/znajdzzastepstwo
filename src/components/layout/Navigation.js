@@ -15,7 +15,7 @@ const Navigation = props => {
     <nav className="container">
       <div
         style={{
-          height: "25vh",
+          height: "20vh",
           display: "flex",
           alignItems: "center",
           width: "80%",
@@ -24,7 +24,7 @@ const Navigation = props => {
       >
         <Link
           to="/"
-          className="title container"
+          className="title container main-title"
           style={{ color: "white", fontSize: "40px" }}
         >
           Znajdź <i className="fas fa-balance-scale"></i>

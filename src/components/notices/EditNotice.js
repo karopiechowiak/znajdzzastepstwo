@@ -105,7 +105,7 @@ class EditNotice extends Component {
             className="input is-small"
           />
           <button className="button is-info is-rounded is-small">
-            Edytuj ogłoszenie
+            Zapisz zmiany
           </button>
         </form>
       </div>

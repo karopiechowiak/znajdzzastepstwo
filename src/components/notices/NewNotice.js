@@ -35,7 +35,7 @@ class NewNotice extends Component {
       <div>
         <form
           className="box container field"
-          style={{ width: "40%", padding: "50px" }}
+          style={{ width: "40%", lineHeight: "1" }}
           onSubmit={this.handleSubmit}
         >
           <h2 className="title is-5">Nowe ogłoszenie</h2>
