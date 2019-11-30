@@ -7,10 +7,7 @@ const LoggedInMenu = props => {
   return (
     <ul className="buttons is-right">
       <li>
-        <NavLink
-          to="/newnotice"
-          className="button is-link is-inverted is-outlined is-rounded"
-        >
+        <NavLink to="/newnotice" className="button is-info is-light is-rounded">
           Nowe ogłoszenie
         </NavLink>
       </li>

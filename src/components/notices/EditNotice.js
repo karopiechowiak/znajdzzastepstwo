@@ -82,7 +82,9 @@ class EditNotice extends Component {
             onChange={this.handleChange}
             value={contact}
           />
-          <button>Edytuj ogłoszenie</button>
+          <button className="button is-link is-rounded is-small">
+            Edytuj ogłoszenie
+          </button>
         </form>
       </div>
     );

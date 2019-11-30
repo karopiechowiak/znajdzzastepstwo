@@ -15,15 +15,33 @@ const NoticeData = props => {
 
   return (
     <div>
-      <p>Miasto: {city}</p>
-      <p>Sąd: {court}</p>
-      <p>Rodzaj sprawy: {type}</p>
-      <p>Data: {date}</p>
-      <p>Godzina: {hour}</p>
-      <p>Opis: {description}</p>
-      <p>Dane kontaktowe: {contact}</p>
       <p>
-        Utworzone przez: {authorFirstName} {authorLastName}
+        Miasto:
+        <b> {city}</b>
+      </p>
+      <p>
+        Sąd:<b> {court}</b>
+      </p>
+      <p>
+        Rodzaj sprawy: <b>{type}</b>
+      </p>
+      <p>
+        Data: <b>{date}</b>
+      </p>
+      <p>
+        Godzina: <b>{hour}</b>
+      </p>
+      <p>
+        Opis: <b>{description}</b>
+      </p>
+      <p>
+        Dane kontaktowe:<b> {contact}</b>
+      </p>
+      <p>
+        Utworzone przez:{" "}
+        <b>
+          {authorFirstName} {authorLastName}
+        </b>
       </p>
     </div>
   );

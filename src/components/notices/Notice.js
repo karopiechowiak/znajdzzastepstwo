@@ -39,7 +39,7 @@ class Notice extends Component {
     } = this.props;
 
     return (
-      <div className="box" id={id}>
+      <div className="box " id={id}>
         {!this.state.editMenuActive && (
           <NoticeData
             city={city}
@@ -53,9 +53,6 @@ class Notice extends Component {
             authorLastName={authorLastName}
           />
         )}
-        {/* {!this.state.editMenuActive && (
-          
-        )} */}
         {this.state.editMenuActive && (
           <EditNotice
             city={city}
@@ -70,12 +67,20 @@ class Notice extends Component {
         )}
 
         {authorId === currentUserId ? (
-          <button onClick={this.toggleEdit}>
+          <button
+            onClick={this.toggleEdit}
+            className="button is-small is-link is-rounded"
+          >
             {this.state.editMenuActive ? "Anuluj" : "Edytuj"}
           </button>
         ) : null}
         {authorId === currentUserId ? (
-          <button onClick={this.handleDelete}>Usuń</button>
+          <button
+            onClick={this.handleDelete}
+            className="button is-small is-danger is-rounded "
+          >
+            Usuń
+          </button>
         ) : null}
       </div>
     );

@@ -10,8 +10,17 @@ class Noticeboard extends Component {
     const { notices, auth, profile } = this.props;
 
     if (!auth.uid) return <Redirect to="/login" />;
+
     return (
-      <div className="container" style={{ width: "60%" }}>
+      <div
+        style={{
+          margin: "0 auto",
+          width: "80%",
+          display: "flex",
+          justifyContent: "space-evenly",
+          flexWrap: "wrap"
+        }}
+      >
         {notices.map(notice => (
           <Notice
             key={notice.id}
